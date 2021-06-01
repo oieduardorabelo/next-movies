@@ -1,3 +1,4 @@
+import withTheme from 'utils/hocs/withTheme';
 
 const DETAILS_PANEL_WRAPPER = 'details-panel-wrapper';
 
@@ -27,4 +28,4 @@ const DetailsPanelWrapper = ({
   </>
 );
 
-export default DetailsPanelWrapper;
+export default withTheme(DetailsPanelWrapper);

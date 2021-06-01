@@ -1,5 +1,6 @@
 
 import SearchIcon from 'public/assets/svgs/icons/search.svg';
+import withTheme from 'utils/hocs/withTheme';
 
 const MagnifierButton = ({
   opened,
@@ -24,7 +25,7 @@ const MagnifierButton = ({
         outline: none;
         color: var(--palette-secondary-contrast-text);
       }
-      
+
       @media ${theme.mediaQueries.large} {
         .magnifier-button {
           font-size: 1rem;
@@ -34,4 +35,4 @@ const MagnifierButton = ({
   </>
 );
 
-export default MagnifierButton;
+export default withTheme(MagnifierButton);

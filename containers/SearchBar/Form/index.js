@@ -1,4 +1,4 @@
-
+import withTheme from 'utils/hocs/withTheme';
 
 const Form = React.forwardRef(({
   opened,
@@ -30,7 +30,7 @@ const Form = React.forwardRef(({
         border-radius: 100px;
         transition: width ${theme.transitions.duration.standard}ms ${theme.transitions.easing.easeInOut};
       }
-    
+
       @media ${theme.mediaQueries.large} {
         .form {
           padding: 1.5rem;
@@ -38,7 +38,7 @@ const Form = React.forwardRef(({
           background-color: var(--palette-secondary-main);
         }
       }
-    
+
       @media ${theme.mediaQueries.smaller} {
         .form {
           max-width: 16rem;
@@ -48,4 +48,4 @@ const Form = React.forwardRef(({
   </>
 ));
 
-export default Form;
+export default withTheme(Form);

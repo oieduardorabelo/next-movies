@@ -1,4 +1,4 @@
-
+import withTheme from 'utils/hocs/withTheme';
 
 const TitleSection = ({
   theme,
@@ -31,4 +31,4 @@ const TitleSection = ({
   </>
 );
 
-export default TitleSection;
+export default withTheme(TitleSection);

@@ -1,3 +1,4 @@
+import withTheme from 'utils/hocs/withTheme';
 
 const BackdropsGridContainer = ({
   theme,
@@ -15,7 +16,7 @@ const BackdropsGridContainer = ({
         align-items: start;
         margin: 4rem 0;
       }
-    
+
       @media ${theme.mediaQueries.small} {
         .grid-container {
           grid-template-columns: repeat(2, 1fr);
@@ -23,7 +24,7 @@ const BackdropsGridContainer = ({
           grid-gap: 4rem 1.5rem;
         }
       }
-    
+
       @media ${theme.mediaQueries.smaller} {
         .grid-container {
           grid-template-columns: repeat(1, 1fr);
@@ -34,4 +35,4 @@ const BackdropsGridContainer = ({
   </>
 );
 
-export default BackdropsGridContainer;
+export default withTheme(BackdropsGridContainer);

@@ -1,4 +1,4 @@
-
+import withTheme from 'utils/hocs/withTheme';
 import clsx from 'clsx';
 
 const MainWrapper = ({
@@ -27,4 +27,4 @@ const MainWrapper = ({
   </>
 );
 
-export default MainWrapper;
+export default withTheme(MainWrapper);

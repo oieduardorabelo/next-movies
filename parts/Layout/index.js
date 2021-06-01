@@ -11,11 +11,9 @@ import TheUser from 'containers/TheUser';
 import MainWrapper from './MainWrapper';
 import ContentWrapper from './ContentWrapper';
 import init from 'actions/init';
-import withTheme from 'utils/hocs/withTheme';
 import { Media, MediaContextProvider } from 'utils/helpers/media';
 
 const Layout = ({
-  theme,
   children
 }) => {
   // TODO: Client-side Rendering for now
@@ -38,15 +36,15 @@ const Layout = ({
        */}
       <MediaContextProvider>
         <Media at='sm'>
-          <MainWrapper theme={theme}>
+          <MainWrapper>
             <AppHeader />
-            <ContentWrapper theme={theme}>
+            <ContentWrapper>
               {children}
             </ContentWrapper>
           </MainWrapper>
         </Media>
         <Media greaterThan='sm'>
-          <MainWrapper theme={theme}>
+          <MainWrapper>
             <Sidebar />
             <div className='desktop-widgets-container'>
               <SearchBar id='desktop' />
@@ -69,7 +67,7 @@ const Layout = ({
                 margin-left: 12px;
               }
             `}</style>
-            <ContentWrapper theme={theme}>
+            <ContentWrapper>
               {children}
             </ContentWrapper>
           </MainWrapper>
@@ -79,4 +77,4 @@ const Layout = ({
   );
 };
 
-export default withTheme(Layout);
+export default Layout;

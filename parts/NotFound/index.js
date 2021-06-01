@@ -18,7 +18,6 @@ const NotFound = ({
   <>
     <PageWrapper className='not-found'>
       <TitleSection
-        theme={theme}
         title={title}
         subtitle={subtitle} />
       <NotFoundImage

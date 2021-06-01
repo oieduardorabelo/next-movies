@@ -1,3 +1,4 @@
+import withTheme from 'utils/hocs/withTheme';
 
 const Input = React.forwardRef(({
   opened,
@@ -21,7 +22,7 @@ const Input = React.forwardRef(({
         border: none;
         transition: margin-left ${theme.transitions.duration.standard}ms ${theme.transitions.easing.easeInOut};
       }
-    
+
       @media ${theme.mediaQueries.large} {
         .input {
           font-size: 1.25rem;
@@ -38,7 +39,7 @@ const Input = React.forwardRef(({
           font-size: 0.875rem;
         }
       }
-    
+
       input:focus,
       input:active {
         outline: none;
@@ -51,4 +52,4 @@ const Input = React.forwardRef(({
   </>
 ));
 
-export default Input;
+export default withTheme(Input);

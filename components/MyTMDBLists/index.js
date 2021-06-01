@@ -2,18 +2,15 @@
 import BackdropsGridContainer from 'components/BackdropsGridContainer';
 import MyTMDBList from './MyTMDBList';
 import Pagination from 'components/Pagination';
-import withTheme from 'utils/hocs/withTheme';
 
 const MyTMDBLists = ({
-  theme,
   myLists,
   baseUrl
 }) => (
   <>
-    <BackdropsGridContainer theme={theme}>
+    <BackdropsGridContainer>
       {myLists.results.map(myList => (
         <MyTMDBList
-          theme={theme}
           key={myList.id}
           myList={myList}
           baseUrl={baseUrl} />
@@ -25,4 +22,4 @@ const MyTMDBLists = ({
   </>
 );
 
-export default withTheme(MyTMDBLists);
+export default MyTMDBLists;

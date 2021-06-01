@@ -11,6 +11,7 @@ import CLASS_NAMES from 'utils/constants/class-names';
 import { W500H282 } from 'config/image-sizes';
 import QUERY_PARAMS from 'utils/constants/query-params';
 import { PUBLIC, PRIVATE } from 'utils/constants/tmdb';
+import withTheme from 'utils/hocs/withTheme';
 
 const POSTER_LINK_CLASS_NAME = 'poster-link';
 const POSTER_TITLE_CLASS_NAME = 'poster-title-color';
@@ -37,9 +38,8 @@ const MyTMDBList = ({
           width={W500H282.WIDTH}
           height={W500H282.HEIGHT}
           src={`${baseUrl}w${W500H282.WIDTH}${myList.backdrop_path}`} />
-        <DetailsPanelWrapper theme={theme}>
+        <DetailsPanelWrapper>
           <PosterTitle
-            theme={theme}
             style={{
               fontSize: '2.125rem',
               fontWeight: theme.typography.fontWeightBold
@@ -48,7 +48,6 @@ const MyTMDBList = ({
             {myList.name}
           </PosterTitle>
           <PosterTitle
-            theme={theme}
             style={{
               fontSize: '1.5rem',
               fontWeight: theme.typography.fontWeightMedium
@@ -73,4 +72,4 @@ const MyTMDBList = ({
   </>
 );
 
-export default MyTMDBList;
+export default withTheme(MyTMDBList);

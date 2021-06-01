@@ -8,12 +8,10 @@ import Input from './Input';
 import MagnifierButton from './MagnifierButton';
 import useClickAway from 'utils/hooks/useClickAway';
 import LINKS from 'utils/constants/links';
-import withTheme from 'utils/hocs/withTheme';
 import QUERY_PARAMS from 'utils/constants/query-params';
 
 const SearchBar = ({
   id,
-  theme
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [opened, setOpened] = useState(false);
@@ -52,19 +50,16 @@ const SearchBar = ({
   return (
     <Form
       opened={opened}
-      theme={theme}
       ref={formRef}
       onClick={onFormClickHandler}
       onSubmit={onFormSubmitHandler}>
       <MagnifierButton
         type='submit'
-        theme={theme}
         opened={opened} />
       <Input
         aria-label='Search Input'
         id={`search-input-${id}`}
         opened={opened}
-        theme={theme}
         ref={inputRef}
         value={searchTerm}
         onChange={onInputChangeHandler}
@@ -73,4 +68,4 @@ const SearchBar = ({
   );
 };
 
-export default withTheme(SearchBar);
+export default SearchBar;

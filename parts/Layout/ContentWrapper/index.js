@@ -1,3 +1,4 @@
+import withTheme from 'utils/hocs/withTheme';
 
 const ContentWrapper = ({
   theme,
@@ -11,15 +12,15 @@ const ContentWrapper = ({
       .content-wrapper {
         width: 100%;
         min-height: 100vh;
-  
+
         display: flex;
         align-items: center;
         flex-direction: column;
-  
+
         padding-top: 6rem;
         padding-bottom: 6rem;
       }
-      
+
       @media ${theme.mediaQueries.larger} {
         .content-wrapper {
           padding-top: 72px;
@@ -37,4 +38,4 @@ const ContentWrapper = ({
   </>
 );
 
-export default ContentWrapper;
+export default withTheme(ContentWrapper);

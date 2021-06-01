@@ -1,4 +1,4 @@
-
+import withTheme from 'utils/hocs/withTheme';
 
 const MoviesGridContainer = ({
   theme,
@@ -16,7 +16,7 @@ const MoviesGridContainer = ({
         align-items: start;
         margin: 4rem 0;
       }
-    
+
       @media ${theme.mediaQueries.small} {
         .grid-container {
           grid-template-columns: repeat(auto-fit, minmax(10rem, 23rem));
@@ -24,7 +24,7 @@ const MoviesGridContainer = ({
           grid-gap: 4rem 1.5rem;
         }
       }
-    
+
       @media ${theme.mediaQueries.smaller} {
         .grid-container {
           grid-template-columns: repeat(auto-fit, minmax(10rem, 18rem));
@@ -35,4 +35,4 @@ const MoviesGridContainer = ({
   </>
 );
 
-export default MoviesGridContainer;
+export default withTheme(MoviesGridContainer);

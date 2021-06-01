@@ -18,7 +18,6 @@ import ListNavigation from 'containers/ListNavigation';
 import BackdropsGridContainer from 'components/BackdropsGridContainer';
 import Pagination from 'components/Pagination';
 import Loader from 'components/UI/Loader';
-import withTheme from 'utils/hocs/withTheme';
 import withAuth from 'utils/hocs/withAuth';
 import QUERY_PARAMS from 'utils/constants/query-params';
 import STATUSES from 'utils/constants/statuses';
@@ -32,7 +31,6 @@ const BACKDROP_STATUSES = {
 };
 
 const ChooseImage = ({
-  theme,
   accountId,
   accessToken
 }) => {
@@ -150,7 +148,7 @@ const ChooseImage = ({
                   subtitle='There are no items added to this list....' />
               ) : (
                 <>
-                  <BackdropsGridContainer theme={theme}>
+                  <BackdropsGridContainer>
                     {movies.results.map(movie => {
                       let backdropStatus;
                       if (chooseImageStatus === STATUSES.PENDING) {
@@ -167,7 +165,6 @@ const ChooseImage = ({
 
                       return (
                         <ChooseImageItem
-                          theme={theme}
                           key={movie.id}
                           movie={movie}
                           text={backdropStatus}
@@ -190,4 +187,4 @@ const ChooseImage = ({
   }
 };
 
-export default withAuth(withTheme(ChooseImage));
+export default withAuth(ChooseImage);

@@ -1,6 +1,5 @@
-
-
 import clsx from 'clsx';
+import withTheme from 'utils/hocs/withTheme';
 
 const CLASS_NAME = 'poster-title';
 
@@ -29,4 +28,4 @@ const PosterTitle = ({
   </>
 );
 
-export default PosterTitle;
+export default withTheme(PosterTitle);

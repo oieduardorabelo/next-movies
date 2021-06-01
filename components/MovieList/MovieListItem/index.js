@@ -10,6 +10,7 @@ import LINKS from 'utils/constants/links';
 import CLASS_NAMES from 'utils/constants/class-names';
 import { W342H513 } from 'config/image-sizes';
 import QUERY_PARAMS from 'utils/constants/query-params';
+import withTheme from 'utils/hocs/withTheme';
 
 const POSTER_LINK_CLASS_NAME = 'poster-link';
 const POSTER_TITLE_CLASS_NAME = 'poster-title-color';
@@ -37,9 +38,8 @@ const MovieListItem = ({
           width={W342H513.WIDTH}
           height={W342H513.HEIGHT}
           src={`${baseUrl}w${W342H513.WIDTH}${movie.poster_path}`} />
-        <DetailsPanelWrapper theme={theme}>
+        <DetailsPanelWrapper>
           <PosterTitle
-            theme={theme}
             className={POSTER_TITLE_CLASS_NAME}>
             {movie.title}
           </PosterTitle>
@@ -67,4 +67,4 @@ const MovieListItem = ({
   </>
 );
 
-export default MovieListItem;
+export default withTheme(MovieListItem);
